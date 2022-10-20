@@ -1001,7 +1001,7 @@ $data = [
     [52, 74, 30, 60, 88, 20, 20, 34, 97, 76, 9, 84, 83, 85, 68, 85, 10, 56, 39, 16, 64, 45, 97, 40, 58, 70, 32, 32, 25, 63, 34, 80, 89, 83, 37, 39, 90, 97, 45, 25, 76, 97, 68, 18, 84, 2, 48, 64, 14, 40, 38, 19, 97, 69, 37, 1, 48, 86, 6, 92],
     ]
     // $kolom_pertama = 1;
-    foreach ($numbers as $index_data => $baris) {
+    foreach ($data as $index_data => $baris) {
         $tmp_kolom = '';
         foreach ($baris as $index_kolom => $kolom) {
                 if(!$index_kolom){
@@ -1013,4 +1013,4 @@ $data = [
                 $tmp_kolom = $kolom;
             }
     }
-      dd($numbers);
+      dd($data);
