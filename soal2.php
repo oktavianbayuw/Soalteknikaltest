@@ -999,18 +999,20 @@ $data = [
     [43, 16, 48, 40, 84, 25, 25, 23, 34, 49, 54, 14, 43, 97, 15, 65, 8, 22, 26, 18, 90, 48, 20, 72, 90, 51, 68, 93, 84, 21, 19, 78, 9, 68, 87, 77, 97, 74, 1, 39, 52, 63, 55, 60, 43, 27, 34, 16, 62, 78, 62, 15, 56, 34, 6, 86, 76, 54, 75, 46],
     [41, 42, 88, 61, 97, 54, 57, 85, 89, 61, 8, 43, 49, 38, 82, 56, 3, 18, 38, 82, 8, 10, 23, 90, 28, 80, 82, 28, 43, 68, 26, 57, 96, 83, 66, 38, 95, 89, 74, 8, 87, 70, 92, 34, 65, 92, 81, 82, 68, 46, 43, 33, 52, 66, 49, 54, 88, 37, 72, 27],
     [52, 74, 30, 60, 88, 20, 20, 34, 97, 76, 9, 84, 83, 85, 68, 85, 10, 56, 39, 16, 64, 45, 97, 40, 58, 70, 32, 32, 25, 63, 34, 80, 89, 83, 37, 39, 90, 97, 45, 25, 76, 97, 68, 18, 84, 2, 48, 64, 14, 40, 38, 19, 97, 69, 37, 1, 48, 86, 6, 92],
-    ]
-    // $kolom_pertama = 1;
-    foreach ($data as $index_data => $baris) {
-        $tmp_kolom = '';
-        foreach ($baris as $index_kolom => $kolom) {
-                if(!$index_kolom){
-                $baris[$index_kolom] = 'Baris'.$index_data+1;
-                }
-                if($tmp_kolom == $kolom){
-                $baris[$index_kolom] = 'skip';
-                }
-                $tmp_kolom = $kolom;
+];
+$new_data = [];
+foreach ($data as $index_data => $baris) {
+    $tmp_kolom = '';
+    foreach ($baris as $index_kolom => $kolom) {
+            if(!$index_kolom){
+            $baris[$index_kolom] = 'Baris '.($index_data+1);
             }
+            if($tmp_kolom == $kolom){
+            $baris[$index_kolom] = 'skip';
+            }
+            $tmp_kolom = $kolom;
     }
-      dd($data);
+    $new_data[]=$baris;
+    
+}
+  dd($new_data);
